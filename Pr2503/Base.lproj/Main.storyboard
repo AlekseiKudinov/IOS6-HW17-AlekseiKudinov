@@ -40,6 +40,9 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Hack password"/>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="CtO-31-OjH">
+                                <rect key="frame" x="197" y="335" width="20" height="24"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -57,13 +60,21 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="b1G-cV-Ujx" secondAttribute="trailing" constant="145" id="KYr-7k-A7B"/>
                             <constraint firstItem="9xT-O8-K2z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="aQn-nC-V5s"/>
                             <constraint firstItem="9xT-O8-K2z" firstAttribute="top" secondItem="Q4S-s3-iee" secondAttribute="bottom" constant="19" id="cld-Se-Tl8"/>
+                            <constraint firstItem="3g4-cd-RKK" firstAttribute="top" secondItem="CtO-31-OjH" secondAttribute="bottom" constant="85" id="fj0-Mu-4dX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CtO-31-OjH" secondAttribute="trailing" constant="197" id="hzE-WJ-s6Y"/>
+                            <constraint firstItem="CtO-31-OjH" firstAttribute="top" secondItem="b1G-cV-Ujx" secondAttribute="bottom" constant="50" id="lGn-pJ-tCV"/>
                             <constraint firstItem="3g4-cd-RKK" firstAttribute="top" secondItem="9xT-O8-K2z" secondAttribute="bottom" constant="220" id="pmR-mT-BIX"/>
                             <constraint firstItem="Q4S-s3-iee" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="90" id="sNP-A0-aTd"/>
+                            <constraint firstItem="CtO-31-OjH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="197" id="tMv-lG-5BR"/>
                             <constraint firstItem="3g4-cd-RKK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="400" id="uaL-hy-Goq"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="CtO-31-OjH" id="0Py-WL-rq8"/>
                         <outlet property="button" destination="3g4-cd-RKK" id="yGm-KB-boF"/>
+                        <outlet property="hackPasswordButton" destination="b1G-cV-Ujx" id="mjz-ld-50Q"/>
+                        <outlet property="passwordTF" destination="9xT-O8-K2z" id="kyv-zu-Lh9"/>
+                        <outlet property="statusLabel" destination="Q4S-s3-iee" id="aiS-C8-1oE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
