@@ -2,6 +2,10 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var passwordTF: UITextField!
+    @IBOutlet weak var hackPasswordButton: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var isBlack: Bool = false {
         didSet {
