@@ -18,10 +18,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3g4-cd-RKK">
-                                <rect key="frame" x="115" y="444" width="184" height="30"/>
+                                <rect key="frame" x="90" y="444" width="234" height="30"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Change background color"/>
                                 <connections>
-                                    <action selector="onBut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XD4-sb-XPE"/>
+                                    <action selector="onBut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ruz-au-A92"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9xT-O8-K2z">
@@ -36,34 +37,48 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1G-cV-Ujx">
-                                <rect key="frame" x="145" y="254" width="124" height="31"/>
+                                <rect key="frame" x="100" y="254" width="214" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Hack password"/>
+                                <connections>
+                                    <action selector="hackPasswordButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0PS-gq-FdE"/>
+                                </connections>
                             </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="CtO-31-OjH">
-                                <rect key="frame" x="197" y="335" width="20" height="24"/>
+                                <rect key="frame" x="197" y="339" width="20" height="20"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="st5-Hc-rRx">
+                                <rect key="frame" x="100" y="293" width="214" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Stop"/>
+                                <connections>
+                                    <action selector="stopHack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bw8-sa-fon"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Q4S-s3-iee" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="13N-Bh-FZu"/>
                             <constraint firstItem="3g4-cd-RKK" firstAttribute="top" secondItem="b1G-cV-Ujx" secondAttribute="bottom" constant="159" id="2TU-58-vMS"/>
+                            <constraint firstItem="CtO-31-OjH" firstAttribute="top" secondItem="st5-Hc-rRx" secondAttribute="bottom" constant="15" id="3t6-63-jfq"/>
+                            <constraint firstItem="b1G-cV-Ujx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="5bZ-Mr-sjS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3g4-cd-RKK" secondAttribute="bottom" constant="388" id="7WY-Un-fxR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Q4S-s3-iee" secondAttribute="trailing" constant="20" id="8MC-EK-pdQ"/>
-                            <constraint firstItem="3g4-cd-RKK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="115" id="B2e-YS-WWS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="st5-Hc-rRx" secondAttribute="trailing" constant="100" id="8wu-Ih-udJ"/>
+                            <constraint firstItem="3g4-cd-RKK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="90" id="9mK-q3-DOt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9xT-O8-K2z" secondAttribute="trailing" constant="20" id="C7C-uQ-Q8D"/>
                             <constraint firstItem="9xT-O8-K2z" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="130" id="Fa4-qO-uyq"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3g4-cd-RKK" secondAttribute="trailing" constant="115" id="I1f-sX-B8g"/>
-                            <constraint firstItem="b1G-cV-Ujx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="145" id="ISc-8E-d41"/>
                             <constraint firstItem="b1G-cV-Ujx" firstAttribute="top" secondItem="9xT-O8-K2z" secondAttribute="bottom" constant="30" id="KJg-50-tAN"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="b1G-cV-Ujx" secondAttribute="trailing" constant="145" id="KYr-7k-A7B"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3g4-cd-RKK" secondAttribute="trailing" constant="90" id="MMM-Mf-stX"/>
+                            <constraint firstItem="st5-Hc-rRx" firstAttribute="top" secondItem="b1G-cV-Ujx" secondAttribute="bottom" constant="8" symbolic="YES" id="WGB-Da-9d6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="b1G-cV-Ujx" secondAttribute="trailing" constant="100" id="aNs-MP-F3o"/>
                             <constraint firstItem="9xT-O8-K2z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="aQn-nC-V5s"/>
                             <constraint firstItem="9xT-O8-K2z" firstAttribute="top" secondItem="Q4S-s3-iee" secondAttribute="bottom" constant="19" id="cld-Se-Tl8"/>
                             <constraint firstItem="3g4-cd-RKK" firstAttribute="top" secondItem="CtO-31-OjH" secondAttribute="bottom" constant="85" id="fj0-Mu-4dX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CtO-31-OjH" secondAttribute="trailing" constant="197" id="hzE-WJ-s6Y"/>
-                            <constraint firstItem="CtO-31-OjH" firstAttribute="top" secondItem="b1G-cV-Ujx" secondAttribute="bottom" constant="50" id="lGn-pJ-tCV"/>
                             <constraint firstItem="3g4-cd-RKK" firstAttribute="top" secondItem="9xT-O8-K2z" secondAttribute="bottom" constant="220" id="pmR-mT-BIX"/>
+                            <constraint firstItem="st5-Hc-rRx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="qp1-3v-zLA"/>
                             <constraint firstItem="Q4S-s3-iee" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="90" id="sNP-A0-aTd"/>
                             <constraint firstItem="CtO-31-OjH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="197" id="tMv-lG-5BR"/>
                             <constraint firstItem="3g4-cd-RKK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="400" id="uaL-hy-Goq"/>
@@ -75,6 +90,7 @@
                         <outlet property="hackPasswordButton" destination="b1G-cV-Ujx" id="mjz-ld-50Q"/>
                         <outlet property="passwordTF" destination="9xT-O8-K2z" id="kyv-zu-Lh9"/>
                         <outlet property="statusLabel" destination="Q4S-s3-iee" id="aiS-C8-1oE"/>
+                        <outlet property="stopButton" destination="st5-Hc-rRx" id="Ue6-YD-LiU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
