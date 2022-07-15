@@ -15,6 +15,7 @@ class ViewController: UIViewController {
         didSet {
             if isBlack {
                 self.view.backgroundColor = .black
+
             } else {
                 self.view.backgroundColor = .white
             }
@@ -35,7 +36,6 @@ class ViewController: UIViewController {
         passwordTF.isSecureTextEntry = true
     }
 
-
     //MARK: - Actions
 
     @IBAction func hackPasswordButton(_ sender: Any) {
@@ -46,6 +46,7 @@ class ViewController: UIViewController {
             self.activityIndicator.startAnimating()
             self.hackPasswordButton.isEnabled = false
             self.activityIndicator.isHidden = false
+            
         }
         DispatchQueue.global().async {
             self.bruteForce(passwordToUnlock: self.password)
@@ -57,6 +58,7 @@ class ViewController: UIViewController {
         DispatchQueue.main.async {
             self.statusLabel.text = "Your password \(self.password) is safe"
             self.activityIndicator.isHidden = true
+            self.passwordTF.isSecureTextEntry = true
             self.hackPasswordButton.isEnabled = true
             self.activityIndicator.stopAnimating()
             self.passwordTF.text = ""
@@ -71,10 +73,10 @@ class ViewController: UIViewController {
 
     func randomPassword() -> String {
         password.removeAll()
-        let randomArray = String().printable
+        let array = String().printable
         let length = 3
         for _ in 0 ..< length {
-            password.append(randomArray.randomElement()!)
+            password.append(array.randomElement() ?? "a")
         }
         return password
     }
@@ -82,7 +84,6 @@ class ViewController: UIViewController {
     func bruteForce(passwordToUnlock: String) {
         let ALLOWED_CHARACTERS:   [String] = String().printable.map { String($0) }
         var password: String = ""
-
 
         while password != passwordToUnlock && isHackingStart {
             password = generateBruteForce(password, fromArray: ALLOWED_CHARACTERS)
@@ -95,14 +96,14 @@ class ViewController: UIViewController {
         }
         DispatchQueue.main.async {
             self.activityIndicator.stopAnimating()
+            self.passwordTF.isSecureTextEntry = false
             self.activityIndicator.isHidden = true
         }
         print(password)
     }
 
-
     func indexOf(character: Character, _ array: [String]) -> Int {
-        return array.firstIndex(of: String(character))!
+        return array.firstIndex(of: String(character)) ?? 0
     }
 
     func characterAt(index: Int, _ array: [String]) -> Character {
@@ -118,10 +119,10 @@ class ViewController: UIViewController {
         }
         else {
             str.replace(at: str.count - 1,
-                        with: characterAt(index: (indexOf(character: str.last!, array) + 1) % array.count, array))
+                        with: characterAt(index: (indexOf(character: str.last ?? characterAt(index: 1, array), array) + 1) % array.count, array))
 
-            if indexOf(character: str.last!, array) == 0 {
-                str = String(generateBruteForce(String(str.dropLast()), fromArray: array)) + String(str.last!)
+            if indexOf(character: str.last ?? characterAt(index: 1, array), array) == 0 {
+                str = String(generateBruteForce(String(str.dropLast()), fromArray: array)) + String(str.last ?? characterAt(index: 1, array))
             }
         }
 
